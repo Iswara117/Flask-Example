@@ -13,7 +13,7 @@ pipeline {
       steps {
         node ('master') {
           sh 'echo "hello ini pipeline"'
-          discordSend description: "Jenkins Pipeline Build", footer: "Footer Text", link: env.BUILD_URL, result: currentBuild.currentResult, title: JOB_NAME, webhookURL: ${{ discord_url.WEBHOOK_URL }}
+          discordSend description: "Jenkins Pipeline Build", footer: "Footer Text", link: env.BUILD_URL, result: currentBuild.currentResult, title: JOB_NAME, webhookURL: ${ discord_url.WEBHOOK_URL }
         }
       }
     }
